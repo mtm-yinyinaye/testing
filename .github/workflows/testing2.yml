@@ -1,4 +1,4 @@
-name: Github Issue
+name: Issue
 run-name: Workflow run by issue create
 
 on:
