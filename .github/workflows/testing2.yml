@@ -2,17 +2,11 @@ name: Github Issue
 run-name: Workflow run by issue create
 
 on:
-  issues:
-    types:
-      - opened
-  label:
-    types:
-      - created
-  # workflow_run:
-  #   workflows: ["Build"]
-  #   types: [requested]
-  #   branches:
-  #     - 'releases/**'
+  workflow_run:
+    workflows: ["Github Issue"]
+    types: [requested]
+    branches:
+      - 'releases/**'
 
 jobs:
   label_issue:
@@ -22,5 +16,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
           ISSUE_URL: ${{ github.event.issue.html_url }}
         run: |
-          # gh issue edit $ISSUE_URL --add-label "triage"
           echo "success"
