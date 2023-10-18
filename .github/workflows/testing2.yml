@@ -1,5 +1,5 @@
 name: When using the workflow_run event
-run-name: Workflow run by issue create
+run-name: Workflow run by Other Workflow run
 
 on:
   workflow_run:
@@ -12,8 +12,6 @@ jobs:
   label_issue:
     runs-on: ubuntu-latest
     steps:
-      - env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
-          ISSUE_URL: ${{ github.event.issue.html_url }}
+      - name: Other workflow is running
         run: |
           echo "success"
