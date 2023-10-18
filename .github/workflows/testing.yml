@@ -8,6 +8,11 @@ on:
   label:
     types:
       - created
+  workflow_run:
+    workflows: ["Build"]
+    types: [requested]
+    branches:
+      - 'releases/**'
 
 jobs:
   label_issue:
