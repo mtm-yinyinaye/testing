@@ -8,6 +8,9 @@ on:
   label:
     types:
       - created
+  push:
+    branches:
+      - 'releases/**'
   # workflow_run:
   #   workflows: ["Build"]
   #   types: [requested]
