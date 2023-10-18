@@ -1,4 +1,4 @@
-name: Github Issue
+name: When using the workflow_run event
 run-name: Workflow run by issue create
 
 on:
